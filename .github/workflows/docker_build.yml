@@ -24,7 +24,7 @@ jobs:
         with:
           platforms: linux/amd64
           push: true
-          file: .devel/coppeliasim/Dockerfile
+          file: coppeliasim/Dockerfile
           tags: | 
               ${{ vars.DOCKER_USERNAME }}/coppeliasim:latest
               ${{ vars.DOCKER_USERNAME }}/coppeliasim:noble_470rev4
