@@ -1,12 +1,12 @@
 name: Build Docker Image for CoppeliaSim EDU
 on: [push, workflow_dispatch]
+env:
+ BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
 jobs:
   build_image:
-    name: Build Docker Image
+    name: Build Docker Image for ${{BRANCH_NAME}}
     runs-on: ubuntu-latest
-    env:
-      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
     steps:
       - uses: actions/checkout@v2
       - name: Log in to Docker Hub
@@ -21,7 +21,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build and push coppeliasim
+      - name: Build and push CoppeliaSim for ${{BRANCH_NAME}}
         uses: docker/build-push-action@v6
         with:
           platforms: linux/amd64
