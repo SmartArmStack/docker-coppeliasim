@@ -31,13 +31,15 @@ rm "${COPPELIASIM_FILE}"
 echo "Setting environment variables for ${COPPELIASIM_FILE}."
 COPPELIASIM_PATH="${HOME}/utils/CoppeliaSim_Edu_${COPPELIASIM_RELEASE}_${UBUNTU_VERSION}"
 
-# Add path for interactive scripts
-echo "export COPPELIASIM_PATH=${COPPELIASIM_PATH}" \
->> ~/.bashrc
-# Add path for noninteractive scripts
+# Add path for noninteractive shells
 echo "export COPPELIASIM_PATH=${COPPELIASIM_PATH}" \
 >> /etc/bash_env
 
 # Aliases do not expand in non-interactive shells
 echo "alias coppeliasim=${COPPELIASIM_PATH}/coppeliaSim.sh &" \
 >> ~/.bashrc
+
+# Copy usrset.txt
+mkdir -p /root/.CoppeliaSim
+cd /root/.CoppeliaSim
+curl -OL "https://raw.githubusercontent.com/SmartArmStack/docker-coppeliasim/refs/heads/${BRANCH}/scripts/usrset.txt" || exit 1
