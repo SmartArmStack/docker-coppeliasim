@@ -5,6 +5,8 @@ jobs:
   build_image:
     name: Build Docker Image
     runs-on: ubuntu-latest
+    env:
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
     steps:
       - uses: actions/checkout@v2
       - name: Log in to Docker Hub
@@ -26,5 +28,4 @@ jobs:
           push: true
           file: coppeliasim/Dockerfile
           tags: | 
-              ${{ vars.DOCKER_USERNAME }}/coppeliasim:latest
-              ${{ vars.DOCKER_USERNAME }}/coppeliasim:noble_470rev4
+              ${{ vars.DOCKER_USERNAME }}/coppeliasim:${{BRANCH_NAME}}
