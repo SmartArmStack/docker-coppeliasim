@@ -3,7 +3,7 @@ SHELL ["/bin/bash", "-c"]
 ENV BASH_ENV="/etc/bash_env"
 
 # Some smart environment variables by @juanjqo
-ARG COPPELIASIM_RELEASE=V4_7_0_rev4
+ARG COPPELIASIM_RELEASE=V4_10_0_rev0
 ARG UBUNTU_VERSION=Ubuntu24_04
 # Branch of this repository from which to download the install script
 ARG BRANCH=main
