@@ -6,7 +6,7 @@ ENV BASH_ENV="/etc/bash_env"
 ARG COPPELIASIM_RELEASE=V4_7_0_rev4
 ARG UBUNTU_VERSION=Ubuntu24_04
 # Branch of this repository from which to download the install script
-ARG BRANCH=main
+ARG BRANCH=noble_470rev4
 
 ENV COPPELIASIM_RELEASE=$COPPELIASIM_RELEASE
 ENV UBUNTU_VERSION=$UBUNTU_VERSION
