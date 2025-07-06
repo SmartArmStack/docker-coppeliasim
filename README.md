@@ -1,5 +1,7 @@
 # Docker CoppeliaSim
 
+![Docker Pulls](https://img.shields.io/docker/pulls/murilomarinho/coppeliasim)
+
 > [!WARNING]
 > These are not official images.\
 > They are based on the `EDU` versions of CoppeliaSim used in the SmartArmStack.\
