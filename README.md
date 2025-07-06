@@ -16,8 +16,7 @@
 ## Example docker compose
 
 > [!TIP]
-> Replace `murilomarinho/coppeliasim:latest` with your desired image.\
-> Notice that `$COPPELIASIM_PATH` is defined in the container.
+> You can replace `murilomarinho/coppeliasim:latest` with your desired image.
 
 Contents of the `compose.yml`.
 
@@ -38,9 +37,16 @@ services:
           && ./coppeliaSim.sh "
 ```
 
+> [!TIP]
+> You can send commandline arguments to `coppeliaSim.sh`
+> as defined in the [official documentation](https://manual.coppeliarobotics.com/en/commandLine.htm).
+
 Which can be run in the same directory with
 
 ```commandline
 xhost +local:root
 docker compose up
 ```
+
+
+
