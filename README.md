@@ -1,7 +1,5 @@
 # Docker CoppeliaSim
 
-![Docker Pulls](https://img.shields.io/docker/pulls/murilomarinho/coppeliasim)
-
 > [!WARNING]
 > These are not official images.\
 > They are based on the `EDU` versions of CoppeliaSim used in the SmartArmStack.\
@@ -9,7 +7,9 @@
 
 ## Current images
 
-| Ubuntu Version | CoppeliaSim Version | Tag             |
+[![Docker Pulls](https://img.shields.io/docker/pulls/murilomarinho/coppeliasim)](https://hub.docker.com/r/murilomarinho/coppeliasim)
+
+| Ubuntu Version | CoppeliaSim Version | Tag             | 
 |----------------|---------------------|-----------------|
 | Noble          | 4.10.0rev0          | `latest`        |
 | Noble          | 4.9.0rev6           | `noble_490rev6` |
