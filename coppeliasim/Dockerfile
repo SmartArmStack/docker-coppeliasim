@@ -1,4 +1,4 @@
-FROM ubuntu:noble
+FROM murilomarinho/sas:jazzy
 SHELL ["/bin/bash", "-c"]
 ENV BASH_ENV="/etc/bash_env"
 
