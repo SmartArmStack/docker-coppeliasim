@@ -1,6 +1,13 @@
 services:
   coppeliasim_arm:
     build: .
+    environment:
+      DISPLAY: $DISPLAY # x server related
+    privileged: true # Needed for some gpu configurations.
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix # x server related
+      - ~/.Xauthority:/root/.Xauthority # x server related
+    tty: true
     command: /bin/bash -c "
-      sudo apt-get install -y tree
-      && tree /root/sas_install/coppelia_install/coppeliaSimLib | grep coppelia"
+      cd $$COPPELIASIM_PATH
+      && ./coppeliaSim.sh "

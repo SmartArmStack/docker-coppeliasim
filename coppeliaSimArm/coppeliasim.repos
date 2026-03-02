@@ -36,7 +36,11 @@ repositories:
     type: git
     url: https://github.com/CoppeliaRobotics/videoRecorder.git
     version: COPPELIASIM_TAG
-  bullet:
-    type: git
-    url: https://github.com/bulletphysics/bullet3.git
-    version: 2.83
+  #simCmd:
+  #  type: git
+  #  url: https://github.com/CoppeliaRobotics/simCmd.git
+  #  version: COPPELIASIM_TAG
+  #bullet:
+  #  type: git
+  #  url: https://github.com/bulletphysics/bullet3.git
+  #  version: 2.83

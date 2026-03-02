@@ -49,6 +49,7 @@ RUN cd $COPPELIASIM_BUILD_FOLDER && colcon build --packages-select coppeliaSim -
 -DQSCINTILLA_DIR=/usr/include/aarch64-linux-gnu/qt5/Qsci \
 -DQSCINTILLA_LIBRARY=/usr/lib/aarch64-linux-gnu/libqscintilla2_qt5.so
 
+RUN rm -r $COPPELIASIM_PATH/programming
 RUN cd $COPPELIASIM_BUILD_FOLDER && colcon build --packages-select simClientApplication --cmake-args \
 -DCOPPELIASIM_INCLUDE_DIR="$COPPELIASIM_BUILD_FOLDER/src/programming/include" \
 -DCMAKE_BUILD_TYPE=Release \
@@ -62,6 +63,20 @@ RUN cd $COPPELIASIM_BUILD_FOLDER && colcon build --packages-select simCodeEditor
 -DCMAKE_BUILD_TYPE=Release \
 -DQSCINTILLA_DIR=/usr/include/aarch64-linux-gnu/qt5/Qsci \
 -DQSCINTILLA_LIBRARY=/usr/lib/aarch64-linux-gnu/libqscintilla2_qt5.so
+
+#RUN cd $COPPELIASIM_BUILD_FOLDER && colcon build --packages-select simCmd --cmake-args \
+#-DCOPPELIASIM_INCLUDE_DIR="$COPPELIASIM_BUILD_FOLDER/src/programming/include" \
+#-DCMAKE_BUILD_TYPE=Release \
+#-DQSCINTILLA_DIR=/usr/include/aarch64-linux-gnu/qt5/Qsci \
+#-DQSCINTILLA_LIBRARY=/usr/lib/aarch64-linux-gnu/libqscintilla2_qt5.so
+
+RUN sudo apt-get update -q && sudo apt install -y luarocks
+RUN rm -r $COPPELIASIM_PATH/luar && mkdir -p $COPPELIASIM_PATH/luar
+RUN luarocks --tree $COPPELIASIM_PATH/luar install lpeg
+RUN luarocks --tree $COPPELIASIM_PATH/luar install lpeglabel
+RUN luarocks --tree $COPPELIASIM_PATH/luar install lua-parser
+RUN luarocks --tree $COPPELIASIM_PATH/luar install luasocket
+RUN luarocks --tree $COPPELIASIM_PATH/luar install org.conman.cbor
 
 #RUN cd $COPPELIASIM_BUILD_FOLDER && colcon build --packages-select BULLET_PHYSICS --cmake-args \
 #    -DCMAKE_CXX_FLAGS="-Wno-narrowing"
