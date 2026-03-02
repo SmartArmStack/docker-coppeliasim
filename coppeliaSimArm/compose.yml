@@ -1,0 +1,6 @@
+services:
+  coppeliasim_arm:
+    build: .
+    command: /bin/bash -c "
+      sudo apt-get install -y tree
+      && tree /root/sas_install/coppelia_install/coppeliaSimLib | grep coppelia"
