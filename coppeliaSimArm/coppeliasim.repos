@@ -1,0 +1,42 @@
+# https://gist.github.com/jeguzzi/1b1ed8c495b7cab54ac4b953243fe669
+repositories:
+  coppeliaSimClientApplication:
+    type: git
+    url: https://github.com/CoppeliaRobotics/coppeliaSimClientApplication.git
+    version: COPPELIASIM_TAG
+  CoppeliaSimLib:
+    type: git
+    url: https://github.com/CoppeliaRobotics/CoppeliaSimLib.git
+    version: COPPELIASIM_TAG
+  include:
+    type: git
+    url: https://github.com/CoppeliaRobotics/include.git
+    version: COPPELIASIM_TAG
+  lua:
+    type: git
+    url: https://github.com/CoppeliaRobotics/lua.git
+    version: COPPELIASIM_TAG
+  python:
+    type: git
+    url: https://github.com/CoppeliaRobotics/python.git
+    version: COPPELIASIM_TAG
+  simExtCodeEditor:
+    type: git
+    url: https://github.com/CoppeliaRobotics/simExtCodeEditor.git
+    version: COPPELIASIM_TAG
+  simExtDyn:
+    type: git
+    url: https://github.com/CoppeliaRobotics/simExtDyn.git
+    version: COPPELIASIM_TAG
+  simExtEigen:
+    type: git
+    url: https://github.com/CoppeliaRobotics/simExtEigen.git
+    version: COPPELIASIM_TAG
+  videoRecorder:
+    type: git
+    url: https://github.com/CoppeliaRobotics/videoRecorder.git
+    version: COPPELIASIM_TAG
+  bullet:
+    type: git
+    url: https://github.com/bulletphysics/bullet3.git
+    version: 2.83
