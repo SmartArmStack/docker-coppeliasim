@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # Check if COPPELIASIM_ROOT_DIR is set
-if [ -z "$COPPELIASIM_ROOT_DIR" ]; then
-    echo "Error: COPPELIASIM_ROOT_DIR environment variable is not set"
+if [ -z "${COPPELIASIM_ROOT_DIR}" ]; then
+    echo "Error: ${COPPELIASIM_ROOT_DIR} environment variable is not set"
     exit 1
 fi
+
+
 
 # Define the interface file path
 INTERFACES_FILE="$COPPELIASIM_ROOT_DIR/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt"
