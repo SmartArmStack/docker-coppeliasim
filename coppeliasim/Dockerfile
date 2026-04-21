@@ -26,5 +26,9 @@ RUN mkdir -p ~/sas_install/coppelia_install/ \
 
 # Add support for more ROS2 message in Lua
 
-# Make it executable
-RUN chmod +x /setup_coppelia_ros2.sh
+WORKDIR /app
+
+RUN mkdir -p /app/scripts
+COPY ./scripts /app/scripts
+
+RUN cd /app/scripts/ && chmod +x setup_coppelia_ros2.sh && bash -c "./setup_coppelia_ros2.sh"
