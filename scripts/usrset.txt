@@ -33,7 +33,7 @@ displayWorldRef = true
 guiFontSize_Win = 13 // -1=default
 guiFontSize_Mac = -1 // -1=default
 guiFontSize_Linux = 13 // -1=default
-statusbarInitiallyVisible = false
+statusbarInitiallyVisible = true
 modelBrowserInitiallyVisible = false
 sceneHierarchyInitiallyVisible = false
 sceneHierarchyHiddenDuringSimulation = false
