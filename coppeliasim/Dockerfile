@@ -22,3 +22,9 @@ RUN mkdir -p ~/sas_install/coppelia_install/ \
 && curl -OL "https://raw.githubusercontent.com/SmartArmStack/docker-coppeliasim/refs/heads/${BRANCH}/scripts/setup_coppeliasim.sh" \
 && chmod +x setup_coppeliasim.sh \
 && bash -c "./setup_coppeliasim.sh"
+
+
+# Add support for more ROS2 message in Lua
+
+# Make it executable
+RUN chmod +x /setup_coppelia_ros2.sh
