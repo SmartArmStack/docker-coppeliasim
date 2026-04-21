@@ -1,4 +1,4 @@
-FROM ubuntu:noble
+FROM murilomarinho/sas:jazzy
 SHELL ["/bin/bash", "-c"]
 ENV BASH_ENV="/etc/bash_env"
 
@@ -28,7 +28,16 @@ RUN mkdir -p ~/sas_install/coppelia_install/ \
 
 WORKDIR /app
 
+# Required to compile the ROS2 messages for CoppeliaSim
+ENV COPPELIASIM_ROOT_DIR=/root/utils/CoppeliaSim_Edu_${COPPELIASIM_RELEASE}_${UBUNTU_VERSION}
+
+
+# Install the required package xsltproc
+RUN apt-get update -q && apt-get install -y xsltproc && rm -rf /var/lib/apt/lists/*
+
 RUN mkdir -p /app/scripts
 COPY ./scripts /app/scripts
 
-RUN cd /app/scripts/ && chmod +x setup_coppelia_ros2.sh && bash -c "./setup_coppelia_ros2.sh"
+RUN cd /app/scripts/ && \
+    chmod +x setup_coppeliasim_lua_ros2.sh && \
+    ./setup_coppeliasim_lua_ros2.sh
