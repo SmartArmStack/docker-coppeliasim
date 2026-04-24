@@ -26,14 +26,13 @@ Contents of the `compose.yml`.
 services:
     coppeliasim:
         image: murilomarinho/coppeliasim:latest
-        platform: linux/amd64 # No current build for arm64
         environment:
-          DISPLAY: $DISPLAY # x server related
+          - DISPLAY # x server related
+          - ROS_DOMAIN_ID
         privileged: true # Needed for some gpu configurations.
         volumes:
           - /tmp/.X11-unix:/tmp/.X11-unix # x server related
           - ~/.Xauthority:/root/.Xauthority # x server related
-        network_mode: "host" # x server related
         command: /bin/bash -c "
           cd $$COPPELIASIM_PATH
           && ./coppeliaSim.sh "
